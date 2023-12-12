@@ -30,8 +30,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/git-lfs/git-lfs.git
-        tag: v3.3.0
-        commit: 77deabdf9a18f8a07ecfd3e0f4aa572ffbbab8d4
+        tag: v3.4.0
+        commit: d06d6e9efd78ff4f958b072146ce167d87f60285
 
         x-checker-data:
           type: git
@@ -44,7 +44,8 @@ modules:
 
     build-commands:
       - install -Dm644 ${FLATPAK_ID}.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo
-      - appstream-compose --basename=${FLATPAK_ID} --prefix=${FLATPAK_DEST} --origin=flatpak ${FLATPAK_ID}
+      - appstream-compose --basename=${FLATPAK_ID} --prefix=${FLATPAK_DEST} --origin=flatpak
+        ${FLATPAK_ID}
 
     sources:
       - type: file
