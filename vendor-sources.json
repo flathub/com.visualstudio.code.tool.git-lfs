@@ -56,44 +56,50 @@
     {
         "type": "git",
         "url": "https://github.com/inconshreveable/mousetrap.git",
-        "tag": "v1.0.0",
+        "tag": "v1.0.1",
         "dest": "vendor/github.com/inconshreveable/mousetrap"
     },
     {
-        "type": "git",
-        "url": "https://github.com/jcmturner/aescts.git",
-        "tag": "v2.0.0",
+        "type": "archive",
+        "url": "https://proxy.golang.org/github.com/jcmturner/aescts/v2/@v/v2.0.0.zip",
+        "sha256": "717a211ad4aac248cf33cadde73059c13f8e9462123a0ab2fed5c5e61f7739d7",
+        "strip-components": 4,
         "dest": "vendor/github.com/jcmturner/aescts/v2"
     },
     {
-        "type": "git",
-        "url": "https://github.com/jcmturner/dnsutils.git",
-        "tag": "v2.0.0",
-        "dest": "vendor/github.com/jcmturner/dnsutils/v2"
+        "type": "archive",
+        "url": "https://proxy.golang.org/github.com/jcmturner/dnsutils/v2/@v/v2.0.0.zip",
+        "dest": "vendor/github.com/jcmturner/dnsutils/v2",
+        "strip-components": 4,
+        "sha256": "f9188186b672e547cfaef66107aa62d65054c5d4f10d4dcd1ff157d6bf8c275d"
     },
     {
-        "type": "git",
-        "url": "https://github.com/jcmturner/gofork.git",
-        "tag": "v1.0.0",
-        "dest": "vendor/github.com/jcmturner/gofork"
+        "type": "archive",
+        "url": "https://proxy.golang.org/github.com/jcmturner/gofork/@v/v1.0.0.zip",
+        "dest": "vendor/github.com/jcmturner/gofork",
+        "strip-components": 3,
+        "sha256": "5e015dd9b038f1dded0b2ded77e529d2f6ba0bed228a98831af5a3610eefcb52"
     },
     {
-        "type": "git",
-        "url": "https://github.com/jcmturner/goidentity.git",
-        "tag": "v6.0.1",
-        "dest": "vendor/github.com/jcmturner/goidentity/v6"
+        "type": "archive",
+        "url": "https://proxy.golang.org/github.com/jcmturner/goidentity/v6/@v/v6.0.1.zip",
+        "dest": "vendor/github.com/jcmturner/goidentity/v6",
+        "strip-components": 4,
+        "sha256": "243e6fd6ea9f3094eea32c55febade6d8aaa1b563db655b0c5327940e4719beb"
     },
     {
-        "type": "git",
-        "url": "https://github.com/jcmturner/gokrb5.git",
-        "tag": "v8.4.2",
-        "dest": "vendor/github.com/jcmturner/gokrb5"
+        "type": "archive",
+        "url": "https://proxy.golang.org/github.com/jcmturner/gokrb5/v8/@v/v8.4.2.zip",
+        "dest": "vendor/github.com/jcmturner/gokrb5/v8",
+        "strip-components": 4,
+        "sha256": "eecd7120363321bb6b58b015395089958720271b3211659d802447d417af5970"
     },
     {
-        "type": "git",
-        "url": "https://github.com/jcmturner/rpc.git",
-        "tag": "v2.0.3",
-        "dest": "vendor/github.com/jcmturner/rpc"
+        "type": "archive",
+        "url": "https://proxy.golang.org/github.com/jcmturner/rpc/v2/@v/v2.0.3.zip",
+        "dest": "vendor/github.com/jcmturner/rpc/v2",
+        "strip-components": 4,
+        "sha256": "90c595355e5e2c9dc1e1ae71a88491a04c34d8791180098da103217cbf5f5574"
     },
     {
         "type": "git",
@@ -134,13 +140,13 @@
     {
         "type": "git",
         "url": "https://github.com/spf13/cobra.git",
-        "tag": "v0.0.3",
+        "tag": "v1.6.0",
         "dest": "vendor/github.com/spf13/cobra"
     },
     {
         "type": "git",
         "url": "https://github.com/spf13/pflag.git",
-        "tag": "v1.0.3",
+        "tag": "v1.0.5",
         "dest": "vendor/github.com/spf13/pflag"
     },
     {
@@ -182,25 +188,25 @@
     {
         "type": "git",
         "url": "https://go.googlesource.com/net",
-        "dest": "vendor/golang.org/x/net",
-        "commit": "69e39bad7dc2"
+        "tag": "v0.7.0",
+        "dest": "vendor/golang.org/x/net"
     },
     {
         "type": "git",
         "url": "https://go.googlesource.com/sync",
-        "dest": "vendor/golang.org/x/sync",
-        "commit": "036812b2e83c"
+        "tag": "v0.1.0",
+        "dest": "vendor/golang.org/x/sync"
     },
     {
         "type": "git",
         "url": "https://go.googlesource.com/sys",
-        "dest": "vendor/golang.org/x/sys",
-        "commit": "665e8c7367d1"
+        "tag": "v0.5.0",
+        "dest": "vendor/golang.org/x/sys"
     },
     {
         "type": "git",
         "url": "https://go.googlesource.com/text",
-        "tag": "v0.3.7",
+        "tag": "v0.7.0",
         "dest": "vendor/golang.org/x/text"
     },
     {
