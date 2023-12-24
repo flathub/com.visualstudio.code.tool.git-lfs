@@ -22,6 +22,7 @@ modules:
     build-commands:
 #        uncomment when generating vendor-sources.json
 #      - go mod download -json | grep '"Zip"' | cut -d '"' -f 4 | sed -E 's|.*?download/|https://proxy.golang.org/|'|while read m; do echo -e "- type: archive\n  url: $m\n  dest: ENTER\n  strip-components: ENTER\n  sha256: $(curl -fsS "$m" | sha256sum -b | cut -d ' ' -f 1)\n"; done
+#      - go mod vendor
       - go build
       - install -Dm755 -t ${FLATPAK_DEST}/bin git-lfs
 

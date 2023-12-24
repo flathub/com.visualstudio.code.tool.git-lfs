@@ -1,4 +1,4 @@
-## Building or updating
+## Updating
 
 ```bash
 git clone https://github.com/git-lfs/git-lfs.git && cd git-lfs
@@ -13,11 +13,12 @@ flatpak-builder build --force-clean --keep-build-dirs com.visualstudio.code.tool
 
 Copy `vendor/modules.txt` (`.flatpak-builder/build/git-lfs/vendor/modules.txt`) and replace file in manifest root.
 
+Run [flatpak-go-vendor-generator script](https://github.com/flatpak/flatpak-builder-tools/blob/master/go-get/flatpak-go-vendor-generator.py)
+and copy and paste the output to `vendor-sources.json` in manifest root.
+
 ```bash
 flatpak-go-vendor-generator.py modules.txt
 ```
-
-Copy and paste to `vendor-sources.json` in manifest root.
 
 The following sources need to manually switched from `git` to zip files from `https://proxy.golang.org/`:
 
@@ -36,4 +37,5 @@ Run this in the source directory of git-lfs to get `https://proxy.golang.org/` u
 go mod download -json | grep '"Zip"' | cut -d '"' -f 4 | sed -E 's|.*?download/|https://proxy.golang.org/|'|while read m; do echo -e "- type: archive\n  url: $m\n  dest: ENTER\n  strip-components: ENTER\n  sha256: $(curl -fsS "$m" | sha256sum -b | cut -d ' ' -f 1)\n"; done
 ```
 
-replace `dest` of the module with `dest` produced from `flatpak-go-vendor-generator.py` and adjust `strip-components` accordingly.
+replace `dest` of the module with `dest` of that module as produced from `flatpak-go-vendor-generator.py` and adjust `strip-components` accordingly.
+Then update `vendor-sources.json` and commit the changes.
