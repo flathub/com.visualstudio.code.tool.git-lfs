@@ -30,8 +30,8 @@ modules:
       - vendor-sources.json
       - type: git
         url: https://github.com/git-lfs/git-lfs.git
-        tag: v3.5.0
-        commit: 0757d453b310248da80a57f50c253816b9b33ef2
+        tag: v3.5.1
+        commit: e237bb3a364603cbb92cabc34b8401d1ad5d795b
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
