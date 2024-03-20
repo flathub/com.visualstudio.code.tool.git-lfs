@@ -7,7 +7,6 @@ sdk-extensions:
 runtime: com.visualstudio.code
 runtime-version: stable
 separate-locales: false
-appstream-compose: false
 
 modules:
   - name: git-lfs
@@ -44,9 +43,6 @@ modules:
     buildsystem: simple
     build-commands:
       - install -Dm644 ${FLATPAK_ID}.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo
-      - appstream-compose --basename=${FLATPAK_ID} --prefix=${FLATPAK_DEST} --origin=flatpak
-        ${FLATPAK_ID}
-
     sources:
       - type: file
         path: com.visualstudio.code.tool.git-lfs.metainfo.xml
