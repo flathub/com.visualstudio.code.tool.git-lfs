@@ -1,13 +1,12 @@
 id: com.visualstudio.code.tool.git-lfs
-branch: '23.08'
+branch: '25.08'
 build-extension: true
-sdk: org.freedesktop.Sdk//23.08
+sdk: org.freedesktop.Sdk//25.08
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
 runtime: com.visualstudio.code
 runtime-version: stable
 separate-locales: false
-appstream-compose: false
 
 modules:
   - name: git-lfs
@@ -15,27 +14,33 @@ modules:
 
     build-options:
       append-path: /usr/lib/sdk/golang/bin
-#      uncomment when generating vendor-sources.json
-#      build-args:
-#         - --share=network
-
+      ## uncomment when generating vendor-sources.json
+      # build-args:
+      #   - --share=network
+        
     build-commands:
-#        uncomment when generating vendor-sources.json
-#      - go mod download -json | grep '"Zip"' | cut -d '"' -f 4 | sed -E 's|.*?download/|https://proxy.golang.org/|'|while read m; do echo -e "- type: archive\n  url: $m\n  dest: ENTER\n  strip-components: ENTER\n  sha256: $(curl -fsS "$m" | sha256sum -b | cut -d ' ' -f 1)\n"; done
-#      - go mod vendor
-      - go build
+      # - |
+      #     go mod download -json | \
+      #       grep '"Zip"' | \
+      #       cut -d '"' -f 4 | \
+      #       sed -E 's|.*?download/|https://proxy.golang.org/|' | \
+      #       while read m; do
+      #         echo -e "- type: archive\n  url: $m\n  dest: ENTER\n  strip-components: ENTER\n  sha256: $(curl -fsS "$m" | sha256sum -b | cut -d ' ' -f 1)\n"
+      #       done
+      # - go mod vendor
+      - go build -mod=vendor -o git-lfs
       - install -Dm755 -t ${FLATPAK_DEST}/bin git-lfs
 
     sources:
       - vendor-sources.json
       - type: git
         url: https://github.com/git-lfs/git-lfs.git
-        tag: v3.5.1
-        commit: e237bb3a364603cbb92cabc34b8401d1ad5d795b
+        tag: v3.7.1
+        commit: b84b33847fe6458f36ef521534dc0eac953cb379
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
-# Comment when generating modules.txt
+      # Comment when generating modules.txt
       - type: file
         path: modules.txt
         dest: vendor
@@ -44,8 +49,6 @@ modules:
     buildsystem: simple
     build-commands:
       - install -Dm644 ${FLATPAK_ID}.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo
-      - appstream-compose --basename=${FLATPAK_ID} --prefix=${FLATPAK_DEST} --origin=flatpak
-        ${FLATPAK_ID}
 
     sources:
       - type: file
