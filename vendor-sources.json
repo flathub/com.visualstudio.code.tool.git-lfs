@@ -33,7 +33,7 @@
         "type": "git",
         "url": "https://github.com/git-lfs/go-netrc.git",
         "dest": "vendor/github.com/git-lfs/go-netrc",
-        "commit": "f0c862dd687a"
+        "commit": "ba0029b43d11"
     },
     {
         "type": "git",
@@ -46,6 +46,12 @@
         "url": "https://github.com/git-lfs/wildmatch.git",
         "tag": "v2.0.1",
         "dest": "vendor/github.com/git-lfs/wildmatch/v2"
+    },
+    {
+        "type": "git",
+        "url": "https://github.com/golang/groupcache.git",
+        "dest": "vendor/github.com/golang/groupcache",
+        "commit": "2c02b8208cf8"
     },
     {
         "type": "git",
@@ -188,31 +194,31 @@
     {
         "type": "git",
         "url": "https://go.googlesource.com/crypto",
-        "tag": "v0.17.0",
+        "tag": "v0.36.0",
         "dest": "vendor/golang.org/x/crypto"
     },
     {
         "type": "git",
         "url": "https://go.googlesource.com/net",
-        "tag": "v0.17.0",
+        "tag": "v0.38.0",
         "dest": "vendor/golang.org/x/net"
     },
     {
         "type": "git",
         "url": "https://go.googlesource.com/sync",
-        "tag": "v0.1.0",
+        "tag": "v0.12.0",
         "dest": "vendor/golang.org/x/sync"
     },
     {
         "type": "git",
         "url": "https://go.googlesource.com/sys",
-        "tag": "v0.15.0",
+        "tag": "v0.31.0",
         "dest": "vendor/golang.org/x/sys"
     },
     {
         "type": "git",
         "url": "https://go.googlesource.com/text",
-        "tag": "v0.14.0",
+        "tag": "v0.23.0",
         "dest": "vendor/golang.org/x/text"
     },
     {
